@@ -1,5 +1,5 @@
-<p id="notice"><%= notice %></p>
-
+#記事は管理人のみ作成・編集・削除が可能にする予定
+この場合のショーエディット・デストロイどうする？
 <h1>記事（テーマ）一覧</h1>
 
 <table>
@@ -12,6 +12,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
+        <td><%= article.title %></td>
         <td><%= link_to 'Show', article %></td>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: '削除しますか?' } %></td>
@@ -22,4 +23,4 @@
 
 <br>
 
-<%# <%= link_to 'New Article', new_agenda_article_path(@article) %> %>
+<%= link_to 'New article', new_article_path %> 

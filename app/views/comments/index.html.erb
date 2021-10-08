@@ -13,7 +13,7 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.title %></td>
+        <td><%= comment.title %></td> #不要になる? 
         <td><%= comment.content %></td>
         <td><%= link_to 'Show', comment %></td>
         <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
