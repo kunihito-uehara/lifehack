@@ -3,9 +3,19 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+<div class="field">
+    <%= f.label :名前 %><br />
+    <%= f.email_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
+
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :メール %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :好きなライフハック %><br />
+    <%= f.email_field :like_hack, autofocus: true, autocomplete: "like_hack" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

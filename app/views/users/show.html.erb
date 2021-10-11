@@ -1,32 +1,28 @@
-<div class="profile row">
+<div class="profile">
   <h1><span>User</span>マイページ</h1>
 
-  <div class="profile-image">
-    <%= image_tag @user.image.url, size: '400x300' if @user.image && @user.image.url %>
+  <div class="profile-icon">
+    <%#= user_icon @user.icon.url, size: '400x300' if @user.icon && @user.icon.url %>
   </div>
 
   <div class="profile-box">
 
-    <h2 class="profile-name"><%= @user.username %></h2>
+    <h2 class="profile-name"><%#= @user.name %></h2>
+    <h2 class="profile-email"><%#= current_user.email %></h2>
 
-    <div class="profile-function">
+    <div class="p">
       <ul>
         <li>
-          <% if current_user == User.find(params[:id]) %>
-            <%= link_to 'ユーザ編集', edit_user_path, class: 'btn user-show-btn' %>
-          <% end %>
+          <%# if current_user == User.find(params[:id]) %>
+            <%#= link_to 'ユーザ編集', edit_user_path, class: 'btn user-show-btn' %>
+          <%# end %>
         </li>
         <li>
-          <% if current_user.admin? %>
-            <%= link_to '管理者画面', rails_admin_path, class: 'btn user-show-btn' %>
-          <% end %>
+          <%# <% if current_user.admin? %> %>
+            <%# <%= link_to '管理者画面', rails_admin_path, class: 'btn user-show-btn' %> %>
+          <%# <% end %> %>
         </li>
       </ul>
     </div>
-
-    <div class="profile-bio">
-      <p><%= @user.introduction %></p>
-    </div>
-
   </div>
 </div>

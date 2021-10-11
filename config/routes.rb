@@ -1,14 +1,26 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  root 'comments#index'
-  # root 'articles#top'
+  # root to: "devise/sessions#new"
   resources :articles
-  # resources :favorites
-  resources :comments
-  # resources :requests
-  resources :users
 
   devise_for :users
+  #? # 利用するモジュールのコントローラーを指定する
+  # 今回はデフォルトで有効なpasswords、registrations、sessionsの3つを指定
+
+    # devise_for :users, controllers: {
+    # passwords: 'users/passwords',
+    # registrations: 'users/registrations',
+    # sessions: 'users/sessions'}
+
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
+#どういうこと？
+  # devise_scope :user do
+  #   post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  #   post 'users/admin_guest_sign_in', to: 'users/sessions#admin_guest_sign_in'
+  # end
+  resources :users, only: [:show]
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
