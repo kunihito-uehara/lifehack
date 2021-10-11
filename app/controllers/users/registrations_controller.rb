@@ -4,6 +4,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
+
+  def destroy
+    if @user.email == 'guest@example.com'
+      redirect_to user_path(@user), alert: "ゲストユーザーは削除できません。"
+    elsif @user.admin == true
+      redirect_to user_path(@user), alert: "管理者は削除できません。"
+    else
+      @user.destroy
+      redirect_to new_user_registration_path, notice: "退会しました"
+    end
+  end
   # GET /resource/sign_up
   # def new
   #   super
