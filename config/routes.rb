@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :articles
 
   devise_for :users
-  #? # 利用するモジュールのコントローラーを指定する
+  #? 利用するモジュールのコントローラーを指定する
   # 今回はデフォルトで有効なpasswords、registrations、sessionsの3つを指定
 
     # devise_for :users, controllers: {

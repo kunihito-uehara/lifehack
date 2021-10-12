@@ -2,14 +2,15 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+          :recoverable, :rememberable, :validatable
 
     #icon画像関係のバリデーションどうしよう
+    #mount_uploader :icon, ImageUploader
 
     has_many :articless, dependent: :destroy
     # has_many :favorites, dependent: :destroy
     # has_many :favorite_articles, through: :favorites, source: :article
-    has_many :comments, dependent: :destroy #消す必要ないかな？迷う
+    has_many :comments, dependent: :destroy 
 
     validates :name, presence: true, length: { maximum: 20 }
     validates :email, presence: true, length: { maximum: 50 }

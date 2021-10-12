@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  # ログイン済ユーザーのみにアクセスを許可する
+  #before_action :authenticate_user!
+  
   #deviseにおけるストロングパラメータ
   before_action :configure_permitted_parameters, if: :devise_controller?
 
