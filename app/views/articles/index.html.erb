@@ -1,7 +1,7 @@
-#記事は管理人のみ作成・編集・削除が可能にする予定
-この場合のショーエディット・デストロイどうする？
-<h1>記事（テーマ）一覧</h1>
-
+<h1>記事一覧</h1>
+リクエストボタン作成
+テーマにお気に入りボタン作成
+ページネーション
 <table>
   <thead>
     <tr>
@@ -12,8 +12,8 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.title %></td>
-        <td><%= link_to 'Show', article %></td>
+        <td><%= article.title %></td>タイトルがカード形式で表示するイメージ
+        <td><%#= article.created_at %></td> 記事作成 日付
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: '削除しますか?' } %></td>
       </tr>
@@ -21,6 +21,10 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New article', new_article_path %> 
+#記事は管理人のみ作成・編集・削除が可能にする予定
+<br>
+<% if current_user.admin? %> 
+<%= link_to '管理者 記事作成', new_article_path %> 
+<%#えらー= link_to '管理者 記事編集', edit_article_path(article) %>
+<% end %>

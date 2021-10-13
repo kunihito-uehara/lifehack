@@ -17,14 +17,15 @@ class UsersController < ApplicationController
   # end
 
   def show
+    @user = current_user
     # @user = User.find([:id])
   end
 
   private
 
-#   def user_params
-#     params.require(:user).permit(:email, :icon, :like_hack)
-#   end
+  def user_params
+    params.require(:user).permit(:email, :icon, :like_hack)
+  end
 
   def set_user
     @user = User.find(params[:id])
