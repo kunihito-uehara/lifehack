@@ -1,9 +1,8 @@
 <div class="profile">
-  <h1><span>User</span>マイページ</h1>
+  <h1><span>プロフィール</span></h1>
 
   <div class="profile-icon">
-    <%#= user_icon @user.icon.url, size: '400x300' if @user.icon && @user.icon.url %>
-    <p>アイコン画像 : <%= @user.icon %></p>
+    <p>プロフィール画像 : <%= image_tag @user.icon.url, size: '400x300' if @user.icon && @user.icon.url %></p>
     
   </div>
 
@@ -15,7 +14,7 @@
       <ul>
         <li>
           <% if current_user == @user %>
-            <%= link_to 'ユーザ編集', edit_user_path, class: 'btn user-show-btn' %>
+            <%= link_to 'プロフィール編集', edit_user_registration_path, class: 'btn user-show-btn' %>
           <% end %>
         </li>
         <li>

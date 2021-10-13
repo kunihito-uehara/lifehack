@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
   
   def create
-    @article = current_user.articles.build(article_params)
+    @article = current_user.articles.build(article_params) 
     #article = Article.new(article_params)
     if @article.save
       redirect_to articles_path, notice: "記事「#{@article.title}」を登録しました！"

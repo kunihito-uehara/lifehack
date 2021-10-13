@@ -5,9 +5,9 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
 
     #icon画像関係のバリデーションどうしよう
-    #mount_uploader :icon, ImageUploader
+    mount_uploader :icon, ImageUploader
 
-    has_many :articless, dependent: :destroy
+    has_many :articles, dependent: :destroy
     # has_many :favorites, dependent: :destroy
     # has_many :favorite_articles, through: :favorites, source: :article
     has_many :comments, dependent: :destroy 
