@@ -31,10 +31,14 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show
+  def show #show画面に投稿一覧＋投稿（ajax）も作る？
+    @article = Article.find(params[:id])
+    # @comments = @article.comments
+    # @comment = @article.comments.build
   end
 
   def destroy
+    @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path, notice: "記事「#{@article.title}」を削除しました！"
   end
