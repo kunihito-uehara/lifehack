@@ -2,17 +2,17 @@ class ArticlesController < ApplicationController
   # before_action :set_article, only: %i[ show edit update destroy ]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order(id: "DESC")
   end
 
   def new
     @article = Article.new
   end
   
-  def create
+  def create #管理人権限
     @article = current_user.articles.build(article_params) 
     if @article.save
-      redirect_to articles_path, notice: "記事「#{@article.title}」を登録しました！"
+      redirect_to articles_path, notice: "#{@article.title}をUP"
     else
       render :new 
     end
@@ -20,23 +20,31 @@ class ArticlesController < ApplicationController
   
   def edit
     @article = Article.find(params[:id])
+    # if @article.user != current_user
+    #   redirect_to recipes_path, alert: "不正なアクセスです。"
   end
   
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      redirect_to articles_path, notice: "記事「#{@article.title}」を更新しました！"    
+      redirect_to articles_path, notice: "#{@article.title}更新"    
     else
       render :edit
     end
   end
 
-  def show
+  def show #ユーザーがshow画面で投稿（ajax）する
+    @article = Article.find(params[:id])
+    @comment = Comment.new
+    @comments = @article.comments.order(created_at: :desc)
+    # @comments = @article.comments
+    # @comment = @article.comments.build
   end
 
-  def destroy
+  def destroy #管理人権限
+    @article = Article.find(params[:id])
     @article.destroy
-    redirect_to articles_path, notice: "記事「#{@article.title}」を削除しました！"
+    redirect_to articles_path, notice: "#{@article.title}削除！"
   end
 
   private

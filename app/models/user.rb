@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
 
-    #icon画像関係のバリデーションどうしよう
     mount_uploader :icon, ImageUploader
 
     has_many :articles, dependent: :destroy
