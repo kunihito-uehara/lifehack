@@ -1,0 +1,2 @@
+class RequestTheme < ApplicationRecord
+end
