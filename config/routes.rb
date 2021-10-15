@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :request_themes
   # resources :users, only: [:show]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 

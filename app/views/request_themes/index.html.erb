@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>リクエストテーマ</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ニックネーム</th>
+      <th>リクエストテーマ</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @request_themes.each do |request_theme| %>
+      <tr>
+        <td><%= request_theme.name %></td>
+        <td><%= request_theme.title %></td>
+        <td><%= link_to 'Show', request_theme %></td>
+        <td><%= link_to 'Edit', edit_request_theme_path(request_theme) %></td>
+        <td><%= link_to 'Destroy', request_theme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'リクエストテーマする', new_request_theme_path %>

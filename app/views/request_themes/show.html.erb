@@ -1,0 +1,14 @@
+<p> リクエストありがとう！</p>
+
+<p>
+  <strong>ニックネーム:</strong>
+  <%= @request_theme.name %>
+</p>
+
+<p>
+  <strong>リクエストテーマ:</strong>
+  <%= @request_theme.title %>
+</p>
+
+<%= link_to 'Edit', edit_request_theme_path(@request_theme) %> |
+<%= link_to 'Back', articles_path %>

@@ -3,11 +3,7 @@
 one:
   name: MyString
   title: MyText
-  references: MyString
-  : 
 
 two:
   name: MyString
   title: MyText
-  references: MyString
-  : 
