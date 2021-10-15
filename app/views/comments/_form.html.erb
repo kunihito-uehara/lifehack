@@ -1,4 +1,4 @@
-<%= form_with(model: comment, local: true) do |form| %>
+<%= form_with(model:  [article, comment]) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -10,11 +10,6 @@
       </ul>
     </div>
   <% end %>
-
-  <%# <div class="field"> %>
-    <%#= form.label :title %>
-    <%#= form.text_field :title %>
-  <%# </div> %>
 
   <div class="field">
     <%= form.label :投稿を入力するajax %>
