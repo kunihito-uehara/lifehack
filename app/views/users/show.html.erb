@@ -2,7 +2,7 @@
   <h1><span>プロフィール</span></h1>
 
   <div class="profile-icon">
-    <p>プロフィール画像 : <%= image_tag @user.icon.url,size: '400x300' if @user.icon && @user.icon.url %></p>
+    <p>プロフィール画像 : <%= image_tag @user.icon.url,size: '200x200' if @user.icon && @user.icon.url %></p>
   </div>
     <p>名前 : <%= @user.name %></p>
     <p>メールアドレス : <%= @user.email %></p>
