@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :request_themes
+  resources :favorites, only: [:create, :destroy] #お気に入りの保存と削除のルーティングを作成
   # resources :users, only: [:show]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
