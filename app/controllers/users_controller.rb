@@ -2,23 +2,20 @@ class UsersController < ApplicationController
   # before_action :set_user, only: %i[ show edit update ]
 
   # def index
-  #   @users= User.all
   # end
 
   # def edit
   # end
 
   # def update
-  #   if @user.update(user_params)
-  #     redirect_to user_path, notice: "プロフィール更新しました。"
-  #   else
-  #     render 'edit'
-  #   end
   # end
 
   def show
+    # @user = User.find(params[:id])
     @user = current_user
-    # @user = User.find([:id])
+    @articles = @user.articles
+    favorites = Favorite.where(user_id: current_user.id).pluck(:article_id)  # ログイン中のユーザーのお気に入りのarticle_idカラムを取得
+    @favorite_list = Article.find(favorites)     # articlesテーブルから、お気に入り登録済みのレコードを取得
   end
 
   private

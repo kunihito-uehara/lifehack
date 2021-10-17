@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # root to: "devise/sessions#new"
   resources :articles do
     resources :comments
+    resources :favorites #お気に入りの保存と削除のルーティングを作成
   end
   
   # devise_for :users
