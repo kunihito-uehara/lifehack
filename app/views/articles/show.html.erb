@@ -28,5 +28,5 @@
       <% else %>
         <%= link_to '記事いいね', article_favorites_path(article_id: @article.id), method: :post, remote: true, class: 'btn btn-primary' %>
       <% end %>
-      ♥<%= @article.favorites.count %> いいね
+        ♥<%= @article.favorites.count %> いいな
     <% end %>
