@@ -36,9 +36,9 @@ class ArticlesController < ApplicationController
   def show #ユーザーがshow画面で投稿（ajax）する
     @article = Article.find(params[:id])
     @comment = Comment.new
+    @favorite = current_user.favorites.find_by(article_id: @article.id)
     @comments = @article.comments.order(created_at: :desc)
-    # @comments = @article.comments
-    # @comment = @article.comments.build
+
   end
 
   def destroy #管理人権限

@@ -9,7 +9,6 @@
     <p><%= comment.user.like_hack %></p>
     <p>コメント：<%= comment.content %></p>
     <% if comment.user == current_user %>
-        <p><%#= link_to '編集', edit_comment_path(comment.article_id, comment.id) %></p>
         <p><%= link_to '削除', article_comment_path(comment.article_id, comment.id), method: :delete, remote: true %></p>
     <% end %>
     <% if current_user.admin? %>
