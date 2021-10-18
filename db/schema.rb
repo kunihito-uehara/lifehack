@@ -45,15 +45,6 @@ ActiveRecord::Schema.define(version: 2021_10_16_003645) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "request_themes", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "title", null: false
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_request_themes_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -75,5 +66,4 @@ ActiveRecord::Schema.define(version: 2021_10_16_003645) do
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "articles"
   add_foreign_key "favorites", "users"
-  add_foreign_key "request_themes", "users"
 end

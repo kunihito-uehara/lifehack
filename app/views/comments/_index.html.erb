@@ -3,8 +3,9 @@
 <% end %>
 <% comments.each do |comment| %>
   <% unless comment.id.nil? %>
-
+    <% if comment.user.icon.present? %>
     <p><%= image_tag comment.user.icon.url %></p>
+    <% end %>
     <p><%= link_to "#{comment.user.name}さん", user_path(comment.user.id) %></p>
     <p><%= comment.user.like_hack %></p>
     <p>コメント：<%= comment.content %></p>
