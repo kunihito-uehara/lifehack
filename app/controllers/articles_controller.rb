@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
   
-  def create #管理人権限
+  def create
     @article = current_user.articles.build(article_params) 
     if @article.save
       redirect_to articles_path, notice: "#{@article.title}をUP"
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show #ユーザーがshow画面で投稿（ajax）する
+  def show 
     @article = Article.find(params[:id])
     @comment = Comment.new
     @favorite = current_user.favorites.find_by(article_id: @article.id)
@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
 
   end
 
-  def destroy #管理人権限
+  def destroy
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path, notice: "#{@article.title}削除！"

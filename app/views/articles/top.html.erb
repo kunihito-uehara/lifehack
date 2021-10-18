@@ -7,11 +7,14 @@
   <%= link_to articles_path do %>
     <%= image_tag "lifehack_logo.png" ,class:'top_logo' %>
     <h1>サイトの説明</h1>
+    コンセプトは、ライフハックの知見が集まるコミュニティーです。
+    ユーザーの抱える悩みをテーマとして、ライフハックの知見活かしてサクッと解決！
+    自身が解決したい悩みはリクエストテーマに投稿してください！
   <% end %>
-    <% unless user_signed_in? %>
-    <ul class="guest_login">
-      <li><%= link_to 'ゲストログイン' , users_guest_sign_in_path, method: :post %></li>
-      <li><%= link_to '管理者ログイン(ゲスト)' , users_admin_guest_sign_in_path , method: :post %></li>
-    </ul>
+    <% if user_signed_in? %>
+      <ul class="guest_login">
+        <li><%= link_to 'ゲストログイン' , users_guest_sign_in_path, method: :post %></li>
+        <li><%= link_to '管理者ログイン(ゲスト)' , users_admin_guest_sign_in_path , method: :post %></li>
+      </ul>
     <% end %>
 </div>

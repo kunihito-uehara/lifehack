@@ -21,17 +21,16 @@
     <%= link_to "プロフィール編集", edit_user_registration_path %>
     <%= link_to '記事一覧', articles_path %>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <%= link_to '管理画面' , rails_admin_path %>
+
   <% else %>
     <%= link_to "新規登録", new_user_registration_path %>
     <%= link_to "ログイン", new_user_session_path %>
+    <%#= link_to 'ゲストログイン' , users_guest_sign_in_path, method: :post %>
+
   <% end %>
 
   <%# <% if current_user.admin?%>
-    <%= link_to 'サイト管理画面' , rails_admin_path ,class:"menu"%>
-  <%# <% end %> %> %>
-  <%# <hr>
-        <%= link_to 'ログアウト' , destroy_user_session_path ,method: :delete,class:"menu"%> %>
-
     <% if notice %>
     <p id="notice", class="alert alert-notice"><%= notice %></p>
   <% end %>

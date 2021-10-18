@@ -29,8 +29,8 @@ Rails.application.routes.draw do
   #   root to: "devise/sessions#new"
   # end
   devise_scope :user do
-    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
-    post 'users/admin_guest_sign_in', to: 'users/sessions#admin_guest_sign_in'
+    post 'articles/guest_sign_in', to: 'articles/sessions#guest_sign_in'
+    post 'articles/admin_guest_sign_in', to: 'articles/sessions#admin_guest_sign_in'
   end
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

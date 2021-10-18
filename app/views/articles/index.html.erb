@@ -5,6 +5,8 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+  <%= link_to 'テーマをリクエストする', new_request_theme_path, class: 'btn btn-primary' %><br>
+
   <%= search_form_for @q do |f| %>
     <%= f.label :title_cont, 'タイトル検索' %> <%# _cont検索したワードが含まれているレコードを取得するメソッド%>
     <%= f.search_field :title_cont %>
@@ -14,8 +16,7 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.title %></td>
-        <td><%= link_to '詳細', article %></td>
+        <td><%= link_to "#{article.title}", article %></td>
         <% if current_user.admin? %> 
           <td><%= link_to '管理者用編集', edit_article_path(article) %></td>
           <td><%= link_to '管理者用削除', article, method: :delete, data: { confirm: '削除しますか?' } %></td>
@@ -25,7 +26,6 @@
   </tbody>
 </table>
 <br>
-<%= link_to 'テーマをリクエストする', new_request_theme_path, class: 'btn btn-primary' %><br>
 <% if current_user.admin? %> 
   <%= link_to '管理者 記事作成', new_article_path %> 
 <% end %>
