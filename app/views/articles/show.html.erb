@@ -22,11 +22,13 @@
         </div>
     <% end %>
     
+    <div class="favorite_button_on">
     <% unless @article.user_id == current_user.id %>
       <% if @favorite.present? %>
         <%= link_to 'いいね解除', article_favorite_path(article_id: @article.id), method: :delete, remote: true, class: 'btn btn-danger' %>
       <% else %>
         <%= link_to '記事いいね', article_favorites_path(article_id: @article.id), method: :post, remote: true, class: 'btn btn-primary' %>
       <% end %>
-        ♥<%= @article.favorites.count %> いいな
+        ♥<%= @article.favorites.count %> いいね
     <% end %>
+    </div>
