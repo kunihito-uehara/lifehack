@@ -10,15 +10,27 @@
   </head>
 
   <body>
+
+  <header class="header">
+      <%= link_to root_path ,class:"top_menu_left_image" do %>
+        <%#= image_tag "lifehack_logo.png" , class:"logo"%>
+      <% end %>
+
   <% if user_signed_in? %>
-      <%= link_to "プロフィール", user_path(current_user.id) %>
-      <%= link_to "プロフィール編集", edit_user_registration_path %>
-      <%= link_to '記事一覧', articles_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
+    <%= link_to "プロフィール", user_path(current_user.id) %>
+    <%= link_to "プロフィール編集", edit_user_registration_path %>
+    <%= link_to '記事一覧', articles_path %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "新規登録", new_user_registration_path %>
+    <%= link_to "ログイン", new_user_session_path %>
+  <% end %>
+
+  <%# <% if current_user.admin?%>
+    <%= link_to 'サイト管理画面' , rails_admin_path ,class:"menu"%>
+  <%# <% end %> %> %>
+  <%# <hr>
+        <%= link_to 'ログアウト' , destroy_user_session_path ,method: :delete,class:"menu"%> %>
 
     <% if notice %>
     <p id="notice", class="alert alert-notice"><%= notice %></p>

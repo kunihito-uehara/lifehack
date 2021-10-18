@@ -79,5 +79,4 @@ gem 'jquery-rails'
 gem 'ransack'
 gem 'kaminari'
 
-gem 'bootsnap', '>= 1.1.0', require: false
 gem 'font-awesome-sass'

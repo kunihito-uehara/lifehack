@@ -1,7 +1,4 @@
 <h1>記事一覧</h1>
-テーマにお気に入りボタン作成
-ページネーション
-
 <table>
   <thead>
     <tr>
@@ -17,23 +14,20 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.title %></td>タイトルがカード形式で表示するイメージ
+        <td><%= article.title %></td>
         <td><%= link_to '詳細', article %></td>
-        <td><%= link_to '管理者編集', edit_article_path(article) %></td>
-        <td><%= link_to '管理者削除', article, method: :delete, data: { confirm: '削除しますか?' } %></td>
+        <% if current_user.admin? %> 
+          <td><%= link_to '管理者用編集', edit_article_path(article) %></td>
+          <td><%= link_to '管理者用削除', article, method: :delete, data: { confirm: '削除しますか?' } %></td>
+        <% end %>
       </tr>
-      
     <% end %>
   </tbody>
 </table>
-
-#記事は管理人のみ作成・編集・削除が可能にする予定
 <br>
-<%= link_to 'テーマをリクエストする', new_request_theme_path %><br>
+<%= link_to 'テーマをリクエストする', new_request_theme_path, class: 'btn btn-primary' %><br>
 <% if current_user.admin? %> 
   <%= link_to '管理者 記事作成', new_article_path %> 
-  <%#= link_to '管理者 記事編集', edit_article_path(article) %>
-  <%#= link_to '管理者削除', article, method: :delete, data: { confirm: '削除しますか?' } %>
 <% end %>
 <%= paginate @articles %>
 
