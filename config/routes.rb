@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  # root to: "articles#top"
   resources :request_themes
   # resources :users, only: [:show]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  # root to: "devise/sessions#new"
   resources :articles do
     resources :comments
     resources :favorites, only: [:create, :destroy] #お気に入りの保存と削除のルーティングを作成
@@ -21,14 +21,13 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   get "user" => "users#show"
 
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
-  #デバイスのログインのこと？
   # devise_scope :user do
-  #   post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
-  #   post 'users/admin_guest_sign_in', to: 'users/sessions#admin_guest_sign_in'
+  #   root to: "devise/sessions#new"
   # end
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    post 'users/admin_guest_sign_in', to: 'users/sessions#admin_guest_sign_in'
+  end
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
 

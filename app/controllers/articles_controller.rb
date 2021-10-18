@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
     @q = Article.ransack(params[:q])
     @articles = @q.result(distinct: true)
     # @articles = Article.all.order(id: "DESC")
+    @articles = Article.all.page(params[:page]).per(5)
   end
 
   def new
@@ -48,7 +49,9 @@ class ArticlesController < ApplicationController
     @article.destroy
     redirect_to articles_path, notice: "#{@article.title}削除！"
   end
-
+  
+  def top
+  end
   private
 
   def article_params

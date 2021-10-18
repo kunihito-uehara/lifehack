@@ -21,7 +21,6 @@
         <td><%= link_to '詳細', article %></td>
         <td><%= link_to '管理者編集', edit_article_path(article) %></td>
         <td><%= link_to '管理者削除', article, method: :delete, data: { confirm: '削除しますか?' } %></td>
-
       </tr>
       
     <% end %>
@@ -32,7 +31,9 @@
 <br>
 <%= link_to 'テーマをリクエストする', new_request_theme_path %><br>
 <% if current_user.admin? %> 
-<%= link_to '管理者 記事作成', new_article_path %> 
-<%#えらー= link_to '管理者 記事編集', edit_article_path(article) %>
+  <%= link_to '管理者 記事作成', new_article_path %> 
+  <%#= link_to '管理者 記事編集', edit_article_path(article) %>
+  <%#= link_to '管理者削除', article, method: :delete, data: { confirm: '削除しますか?' } %>
 <% end %>
+<%= paginate @articles %>
 
