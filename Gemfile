@@ -80,3 +80,4 @@ gem 'ransack'
 gem 'kaminari'
 
 gem 'font-awesome-sass'
+gem 'bootstrap', '~> 4.6.0'
