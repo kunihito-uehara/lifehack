@@ -6,20 +6,17 @@
 
 .top_container .title {
 	margin: 56px auto;
-	max-width: 50%;
-	min-width: 600px;
+	max-width: 100%;
+	min-width: 800px;
 }
 
 .top_container .comment {
-	margin: 30px auto;
+	font-size: 50px;
+	margin: 0px auto;
 }
 
-.top_image {
-	margin: 0 auto;
-}
-
-.guest_login li {
-	font-size: 18px;
+.guest_login {
+	font-size: 30px;
 	margin: 4px auto;
 }
 .top_logo {
