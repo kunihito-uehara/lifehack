@@ -2,7 +2,10 @@
 記事お気に入り必要
 ※画像＝タイトル
 
-<%= image_tag 'hack1.jpg', size: '1500x400' %><br>
+<%#= image_tag 'hack1.jpg', size: '1500x300' %>
+<div class="article_title">
+<p><%= "#{@article.title}"%></p>
+</div>
 
 <div class="row">
     <ul>
@@ -19,7 +22,7 @@
     <% end %>
     
     <div class="favorite_button_on">
-    <% unless @article.user_id == current_user.id %>
+    <% if current_user && @article.user_id != current_user.id %>
       <% if @favorite.present? %>
         <%= link_to 'いいね解除', article_favorite_path(article_id: @article.id), method: :delete, remote: true, class: 'btn btn-danger' %>
       <% else %>

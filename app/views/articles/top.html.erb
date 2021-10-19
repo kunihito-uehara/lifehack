@@ -6,15 +6,19 @@
 
   <%= link_to articles_path do %>
     <%= image_tag "lifehack_logo.png" ,class:'top_logo' %>
+
     <h1>サイトの説明</h1>
-    コンセプトは、ライフハックの知見が集まるコミュニティーです。
-    ユーザーの抱える悩みをテーマとして、ライフハックの知見活かしてサクッと解決！
-    自身が解決したい悩みはリクエストテーマに投稿してください！
+    <p>コンセプトは、ライフハックの知見が集まるコミュニティーです。</p>
+    <p>ユーザーの抱える悩みをテーマとして、ライフハックの知見活かしてサクッと解決！</p>
+    <p>自身が解決したい悩みはリクエストテーマに投稿してください！</p>
   <% end %>
     <% if user_signed_in? %>
       <ul class="guest_login">
-        <li><%= link_to 'ゲストログイン' , users_guest_sign_in_path, method: :post %></li>
-        <li><%= link_to '管理者ログイン(ゲスト)' , users_admin_guest_sign_in_path , method: :post %></li>
-      </ul>
+        <%= link_to " 記事一覧 ", articles_path, class:"btn btn-outline-primary" %></li>
+        <% else %>
+        <%= link_to 'ゲストログイン' , users_guest_sign_in_path, method: :post, class:"btn btn-outline-primary" %>
+        <%= link_to '管理者ゲストログイン', users_guest_admin_sign_in_path, method: :post, class:"btn btn-outline-primary" %>
+        <%= link_to " ログインする ", new_user_session_path, class:"btn btn-outline-primary" %>
+        </ul>
     <% end %>
 </div>

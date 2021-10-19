@@ -17,7 +17,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= link_to "#{article.title}", article %></td>
-        <% if current_user.admin? %> 
+        <% if current_user && current_user.admin? %> 
           <td><%= link_to '管理者用編集', edit_article_path(article) %></td>
           <td><%= link_to '管理者用削除', article, method: :delete, data: { confirm: '削除しますか?' } %></td>
         <% end %>
@@ -26,8 +26,8 @@
   </tbody>
 </table>
 <br>
-<% if current_user.admin? %> 
-  <%= link_to '管理者 記事作成', new_article_path %> 
+<% if current_user && current_user.admin? %> 
+  <%= link_to '管理者 記事作成', new_article_path,class: 'btn btn-primary' %> 
 <% end %>
 <%= paginate @articles %>
 

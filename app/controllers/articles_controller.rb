@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
   def show 
     @article = Article.find(params[:id])
     @comment = Comment.new
-    @favorite = current_user.favorites.find_by(article_id: @article.id)
+    @favorite = current_user&.favorites&.find_by(article_id: @article.id)
     @comments = @article.comments.order(created_at: :desc)
 
   end
