@@ -57,7 +57,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     respond_to do |format|
       if @comment.destroy
-        flash.now[:notice] = '投稿しました！'
+        flash.now[:notice] = '削除！'
         format.js { render :index }
   #   respond_to do |format|
     #     format.js { render :index }
