@@ -12,23 +12,27 @@ body {
 	min-height: 100%;
 	position: relative;
 }
-.aaa {
+.card-title {
+	display: flex;
+	// min-width: 400px;
+	height: auto;
 	padding: 0.4em 0.5em; /*文字の上下 左右の余白*/
 	color: #494949; /*文字色*/
 	background: #f4f4f4; /*背景色*/
 	border-left: solid 5px #7db4e6; /*左線*/
 	border-bottom: solid 3px #d7d7d7; /*下線*/
 }
-.rouw .comments_area {
-	// position: absolute;
-	// content: "";
-	// top: 100%;
-	// left: 30px;
-	// border: 15px solid transparent;
-	// border-top: 15px solid #e0edff;
-	// width: 0;
-	// height: 0;
-}
+
+// .rouw .comments_area {
+// position: absolute;
+// content: "";
+// top: 100%;
+// left: 30px;
+// border: 15px solid transparent;
+// border-top: 15px solid #e0edff;
+// width: 0;
+// height: 0;
+// }
 // .box11 {
 // 	padding: auto;
 // 	margin: auto;
@@ -43,22 +47,6 @@ body {
 // }
 
 //-----------------------------------------------------
-
-.size {
-	font-size: 3em;
-}
-.size_top_icon {
-	font-size: 2em;
-	color: white;
-}
-.top_solid {
-	border: 2px solid #000000;
-	width: 300px;
-	height: 100px;
-}
-.index-article {
-	text-align: center;
-}
 .icon_image {
 	width: 80px;
 	height: 80px;
@@ -70,7 +58,7 @@ body {
 	text-decoration: none;
 }
 .article_title {
-	font-size: 100px;
+	font-size: 80px;
 }
 .comment-create {
 	width: 1000px;

@@ -6,23 +6,25 @@
     </tr>
   </thead>
   <%= link_to 'テーマをリクエストする', new_request_theme_path, class: 'btn btn-primary' %><br>
-
+<br />
   <%= search_form_for @q do |f| %>
     <%= f.label :title_cont, 'タイトル検索' %> <%# _cont検索したワードが含まれているレコードを取得するメソッド%>
     <%= f.search_field :title_cont %>
     <%= f.submit "検索" %><br>
   <% end %>
-
-  <div class="aaa">
+<br />
+  <div class="row">
     <% @articles.each do |article| %>
-        <p><%= link_to "#{article.title}", article,data: {"turbolinks" => false} %></p>
-    </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card-title"><%= link_to "#{article.title}", article,data: {"turbolinks" => false} %></div>
         <% if current_user && current_user.admin? %> 
-          <%= link_to '編集', edit_article_path(article) %>
-          <%= link_to '削除', article, method: :delete, data: { confirm: '削除しますか?' } %>
+          <%= link_to '編集', edit_article_path(article), class: "btn btn-outline-info" %>
+          <%= link_to '削除', article, class: "btn btn-outline-danger", method: :delete, data: { confirm: '削除?' } %>
         <% end %>
-  
+        <br /><br />
+      </div>
     <% end %>
+  </div>
 <% if current_user && current_user.admin? %> 
   <%= link_to '管理者 記事作成', new_article_path,class: 'btn btn-primary' %> 
 <% end %>
