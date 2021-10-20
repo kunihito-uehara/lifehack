@@ -1,18 +1,25 @@
 <% if notice %>
   <p id="notice", class="alert alert-notice"><%= notice %></p>
 <% end %>
-<% comments.each do |comment| %>
-  <% unless comment.id.nil? %>
 
-    <p><%= image_tag comment.user.icon.url %></p>
-    <p><%= link_to "#{comment.user.name}さん", user_path(comment.user.id) %></p>
-    <p><%= comment.user.like_hack %></p>
-    <p>コメント：<%= comment.content %></p>
+<% comments.each do |comment| %>
+    <td class="align-middle">
+  <% unless comment.id.nil? %>
+    <% if comment.user.icon.present? %>
+    <p><%#= image_tag comment.user.icon.url %></p>
+  <% end %>
+  </td>
+    <div class=""><%= image_tag comment.user.icon.url %></div>
+    <p><%= comment.user.like_hack %></p>   
+    <strong><%= link_to "#{comment.user.name}", user_path(comment.user.id) %></strong>
+    <p>吹き出しコメント：<%= comment.content %></p>
+
     <% if comment.user == current_user %>
         <p><%= link_to '削除', article_comment_path(comment.article_id, comment.id), method: :delete, remote: true %></p>
     <% end %>
-    <% if current_user.admin? %>
-        <p><%= link_to '削除', article_comment_path(comment.article_id, comment.id), method: :delete, remote: true %></p>
+
+    <% if current_user && current_user.admin? %>
+        <p><%= link_to '管理者削除', article_comment_path(comment.article_id, comment.id), method: :delete, remote: true %></p>
           <% end %>
   <% end %>
 <% end %>

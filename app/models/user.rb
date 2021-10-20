@@ -16,14 +16,15 @@ class User < ApplicationRecord
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
-      # user.name = "ゲスト"
-      # ↑name を入力必須としているならば， user.name = "ゲスト" 必要
+      user.name = "ゲスト"
+      # ↑name （カラム）を入力必須としているならば， user.name = "ゲスト" 必要
     end
   end
   def self.admin_guest
-    find_or_create_by!(email: 'guest@example.com') do |user|
+    find_or_create_by!(email: 'admin@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
-      # user.name = "ゲスト（管理者）"
+      user.name = "ゲスト（管理者）"
+      user.admin = true
     end
   end
 end

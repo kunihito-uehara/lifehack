@@ -10,24 +10,35 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-      <%#= link_to "コメント投稿", comments_path %>
-      <%= link_to "プロフィール", user_path(current_user.id) %>
-      <%= link_to "プロフィール編集", edit_user_registration_path %>
-      <%= link_to '記事一覧', articles_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
 
-    <% if notice %>
+  <header class="header">
+      <%= link_to root_path ,class:"top_menu_left_logo" do %>
+        <%= image_tag "lifehack_logo.png" , class:"logo"%>
+      <% end %>
+
+  <% if user_signed_in? %>
+    <%= link_to "プロフィール", user_path(current_user.id) %>
+    <%= link_to "プロフィール編集", edit_user_registration_path %>
+    <%= link_to '記事一覧', articles_path %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "新規登録", new_user_registration_path %>
+    <%= link_to "ログイン", new_user_session_path %>
+    <%#= link_to 'ゲストログイン' , users_guest_sign_in_path, method: :post %>
+
+  <% end %>
+
+  <%# <% if current_user.admin?%>
+  <% if notice %>
     <p id="notice", class="alert alert-notice"><%= notice %></p>
   <% end %>
-  <% if alert %>
+    <% if alert %>
     <p class="alert alert-error"><%= alert %></p>
-  <% end %>
+    <% end %>
   
     <%= yield %>
+    <footer class="footer">
+    <p></p>
+    </footer>
   </body>
 </html>

@@ -1,32 +1,30 @@
 <h1>記事一覧</h1>
-テーマにお気に入りボタン作成
-ページネーション
-
 <table>
   <thead>
     <tr>
       <th colspan="3"></th>
     </tr>
   </thead>
-  <tbody>
+  <%= link_to 'テーマをリクエストする', new_request_theme_path, class: 'btn btn-primary' %><br>
+
+  <%= search_form_for @q do |f| %>
+    <%= f.label :title_cont, 'タイトル検索' %> <%# _cont検索したワードが含まれているレコードを取得するメソッド%>
+    <%= f.search_field :title_cont %>
+    <%= f.submit "検索" %><br>
+  <% end %>
+
+  <div class="aaa">
     <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>タイトルがカード形式で表示するイメージ
-        <td><%= link_to '詳細', article %></td>
-        <td><%= link_to '管理者編集', edit_article_path(article) %></td>
-        <td><%= link_to '管理者削除', article, method: :delete, data: { confirm: '削除しますか?' } %></td>
-
-      </tr>
-      
+        <p><%= link_to "#{article.title}", article,data: {"turbolinks" => false} %></p>
+    </div>
+        <% if current_user && current_user.admin? %> 
+          <%= link_to '編集', edit_article_path(article) %>
+          <%= link_to '削除', article, method: :delete, data: { confirm: '削除しますか?' } %>
+        <% end %>
+  
     <% end %>
-  </tbody>
-</table>
-
-#記事は管理人のみ作成・編集・削除が可能にする予定
-<br>
-<%= link_to 'テーマをリクエストする', new_request_theme_path %><br>
-<% if current_user.admin? %> 
-<%= link_to '管理者 記事作成', new_article_path %> 
-<%#えらー= link_to '管理者 記事編集', edit_article_path(article) %>
+<% if current_user && current_user.admin? %> 
+  <%= link_to '管理者 記事作成', new_article_path,class: 'btn btn-primary' %> 
 <% end %>
+<%= paginate @articles %>
 

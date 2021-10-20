@@ -1,0 +1,78 @@
+html {
+	height: 100%;
+	font-size: 100%;
+}
+body {
+	text-align: center;
+	height: 100%;
+}
+.main {
+	width: 100%;
+	margin: 0 auto;
+	min-height: 100%;
+	position: relative;
+}
+.aaa {
+	padding: 0.4em 0.5em; /*文字の上下 左右の余白*/
+	color: #494949; /*文字色*/
+	background: #f4f4f4; /*背景色*/
+	border-left: solid 5px #7db4e6; /*左線*/
+	border-bottom: solid 3px #d7d7d7; /*下線*/
+}
+.rouw .comments_area {
+	// position: absolute;
+	// content: "";
+	// top: 100%;
+	// left: 30px;
+	// border: 15px solid transparent;
+	// border-top: 15px solid #e0edff;
+	// width: 0;
+	// height: 0;
+}
+// .box11 {
+// 	padding: auto;
+// 	margin: auto;
+// 	color: #5d627b;
+// 	background: white;
+// 	border-top: solid 5px #5d627b;
+// 	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+// }
+// .box11 p {
+// 	margin: auto;
+// 	padding: auto;
+// }
+
+//-----------------------------------------------------
+
+.size {
+	font-size: 3em;
+}
+.size_top_icon {
+	font-size: 2em;
+	color: white;
+}
+.top_solid {
+	border: 2px solid #000000;
+	width: 300px;
+	height: 100px;
+}
+.index-article {
+	text-align: center;
+}
+.icon_image {
+	width: 80px;
+	height: 80px;
+	border-radius: 100px;
+	object-fit: cover;
+}
+.image_form {
+	margin: auto;
+	text-decoration: none;
+}
+.article_title {
+	font-size: 100px;
+}
+.comment-create {
+	width: 1000px;
+	height: 1000px;
+}

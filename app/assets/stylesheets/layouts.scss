@@ -1,0 +1,43 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: White;
+	min-height: 100vh;
+	position: relative;
+	padding-bottom: 30px;
+	box-sizing: border-box;
+	font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", sans-serif;
+	font-weight: 500;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+}
+.header {
+	height: 80px;
+	width: 100%;
+	font-size: 1rem;
+	display: table;
+}
+
+.header .logo {
+	height: 80px;
+	width: 80px;
+}
+/*できない！TOPページのみロゴ非表示したい*/
+.header .logo {
+	display: none;
+}
+
+.top_menu_left_logo {
+	padding: 10px;
+	float: left;
+	margin: 0;
+}
+
+.header_container {
+	margin: 32px;
+}
