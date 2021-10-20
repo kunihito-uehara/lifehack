@@ -23,31 +23,8 @@ body {
 	border-bottom: solid 3px #d7d7d7; /*下線*/
 }
 
-// .rouw .comments_area {
-// position: absolute;
-// content: "";
-// top: 100%;
-// left: 30px;
-// border: 15px solid transparent;
-// border-top: 15px solid #e0edff;
-// width: 0;
-// height: 0;
-// }
-// .box11 {
-// 	padding: auto;
-// 	margin: auto;
-// 	color: #5d627b;
-// 	background: white;
-// 	border-top: solid 5px #5d627b;
-// 	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-// }
-// .box11 p {
-// 	margin: auto;
-// 	padding: auto;
-// }
-
 //-----------------------------------------------------
-.icon_image {
+img.icon-image {
 	width: 80px;
 	height: 80px;
 	border-radius: 100px;
@@ -63,4 +40,25 @@ body {
 .comment-create {
 	width: 1000px;
 	height: 1000px;
+}
+
+.user_wrapper {
+	display: inline-flex;
+}
+
+.user_icon {
+	margin-right: 30px;
+}
+
+.user_info {
+	padding-top: 10px;
+}
+
+.user_likehack {
+	padding-top: 10px;
+}
+
+.balloon {
+	position: relative;
+	padding: 20px;
 }
