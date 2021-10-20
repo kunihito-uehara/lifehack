@@ -12,9 +12,9 @@ body {
 	min-height: 100%;
 	position: relative;
 }
+//記事一覧css 付箋ふう
 .card-title {
 	display: flex;
-	// min-width: 400px;
 	height: auto;
 	padding: 0.4em 0.5em; /*文字の上下 左右の余白*/
 	color: #494949; /*文字色*/
@@ -22,7 +22,35 @@ body {
 	border-left: solid 5px #7db4e6; /*左線*/
 	border-bottom: solid 3px #d7d7d7; /*下線*/
 }
-
+//かぎかっこ風
+.box19 {
+	position: relative;
+	padding: 0.25em 1em;
+}
+.box19:before,
+.box19:after {
+	content: "";
+	width: 20px;
+	height: 30px;
+	position: absolute;
+	display: inline-block;
+}
+.box19:before {
+	border-left: solid 1px #5767bf;
+	border-top: solid 1px #5767bf;
+	top: 0;
+	left: 0;
+}
+.box19:after {
+	border-right: solid 1px #5767bf;
+	border-bottom: solid 1px #5767bf;
+	bottom: 0;
+	right: 0;
+}
+.box19 p {
+	margin: 0;
+	padding: 0;
+}
 //-----------------------------------------------------
 img.icon-image {
 	width: 80px;
@@ -35,11 +63,11 @@ img.icon-image {
 	text-decoration: none;
 }
 .article_title {
-	font-size: 80px;
+	font-family: "ヒラギノ角ゴ StdN", "Hiragino Kaku Gothic StdN", sans-serif;
+	font-size: 100px;
 }
 .comment-create {
-	width: 1000px;
-	height: 1000px;
+	width: 100%;
 }
 
 .user_wrapper {
@@ -58,7 +86,17 @@ img.icon-image {
 	padding-top: 10px;
 }
 
-.balloon {
+//コメント吹き出しふうまだできてない
+.balloon2-top {
 	position: relative;
-	padding: 20px;
+	display: inline-block;
+	margin: 1.5em 0;
+	padding: 7px 10px;
+	width: 800px;
+	max-width: 100%;
+	color: #555;
+	font-size: 18px;
+	background: #fff;
+	border: solid 3px #555;
+	box-sizing: border-box;
 }

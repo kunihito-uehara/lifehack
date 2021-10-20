@@ -13,16 +13,15 @@
 <h1>リクエストするテーマを投稿してね！</h1>
 
   <div class="field">
-    <%= form.label :ニックネーム %>
+    <%= form.label :ニックネーム%>
     <%= form.text_field :name %>
   </div>
-
   <div class="field">
     <%= form.label :リクエストテーマ %>
     <%= form.text_area :title %>
   </div>
 
   <div class="actions">
-    <%= form.submit'リクエストする' %>
+    <%= form.submit'リクエストする',class: 'btn btn-primary' %>
   </div>
 <% end %>

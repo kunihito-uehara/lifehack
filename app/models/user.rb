@@ -17,6 +17,7 @@ class User < ApplicationRecord
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲスト"
+      user.like_hack = "パワーナップ"
       # ↑name （カラム）を入力必須としているならば， user.name = "ゲスト" 必要
     end
   end
@@ -24,6 +25,7 @@ class User < ApplicationRecord
     find_or_create_by!(email: 'admin@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲスト（管理者）"
+      user.like_hack = "パワーナップ"
       user.admin = true
     end
   end
