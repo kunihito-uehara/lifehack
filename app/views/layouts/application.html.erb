@@ -12,8 +12,8 @@
   <body>
 
   <header class="header">
-      <%= link_to root_path ,class:"top_menu_left_image" do %>
-        <%#= image_tag "lifehack_logo.png" , class:"logo"%>
+      <%= link_to root_path ,class:"top_menu_left_logo" do %>
+        <%= image_tag "lifehack_logo.png" , class:"logo"%>
       <% end %>
 
   <% if user_signed_in? %>
@@ -29,13 +29,16 @@
   <% end %>
 
   <%# <% if current_user.admin?%>
-    <% if notice %>
+  <% if notice %>
     <p id="notice", class="alert alert-notice"><%= notice %></p>
   <% end %>
-  <% if alert %>
+    <% if alert %>
     <p class="alert alert-error"><%= alert %></p>
-  <% end %>
+    <% end %>
   
     <%= yield %>
+    <footer class="footer">
+    <p></p>
+    </footer>
   </body>
 </html>
