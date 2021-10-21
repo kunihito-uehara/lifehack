@@ -3,7 +3,7 @@
 <% end %>
 <div class="row">
   <% comments.each do |comment| %>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="comment-box col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <td class="align-middle">
       <% unless comment.id.nil? %>
         <% if comment.user.icon.present? %>

@@ -13,16 +13,17 @@ body {
 	position: relative;
 }
 //記事一覧css 付箋ふう
-.card-title {
-	display: flex;
-	height: auto;
-	padding: 0.4em 0.5em; /*文字の上下 左右の余白*/
-	color: #494949; /*文字色*/
-	background: #f4f4f4; /*背景色*/
-	border-left: solid 5px #7db4e6; /*左線*/
-	border-bottom: solid 3px #d7d7d7; /*下線*/
-}
-//かぎかっこ風
+// .card-title {
+// 	display: flex;
+// 	height: auto;
+// 	padding: 0.4em 0.5em; /*文字の上下 左右の余白*/
+// 	color: #494949; /*文字色*/
+// 	background: #f4f4f4; /*背景色*/
+// 	border-left: solid 5px #7db4e6; /*左線*/
+// 	border-bottom: solid 3px #d7d7d7; /*下線*/
+// }
+
+//記事一覧（かぎかっこ）
 .box19 {
 	position: relative;
 	padding: 0.25em 1em;
@@ -48,6 +49,14 @@ body {
 	right: 0;
 }
 .box19 p {
+	font-size: 50px;
+	margin: 0;
+	padding: 0;
+}
+//記事詳細画面のタイトル文字
+.box19 h1 {
+	font-family: "ヒラギノ角ゴ StdN", "Hiragino Kaku Gothic StdN", sans-serif;
+	font-size: 100px;
 	margin: 0;
 	padding: 0;
 }
@@ -66,6 +75,7 @@ img.icon-image {
 	font-family: "ヒラギノ角ゴ StdN", "Hiragino Kaku Gothic StdN", sans-serif;
 	font-size: 100px;
 }
+
 .article-title-from {
 	display: inline-block;
 	width: 100%;
@@ -118,24 +128,39 @@ img.icon-image {
 	border: solid 3px #555;
 	box-sizing: border-box;
 }
-/*陰影をストライプにしたボタンとの差分*/
-a.btn-border {
-	border: 2px solid #000;
-	border-top: 1px solid #000;
-	border-radius: 0 0 0.5rem 0.5rem;
-	background: -webkit-repeating-linear-gradient(
-		left,
-		#000,
-		#000 1px,
-		transparent 2px,
-		transparent 6px
-	);
-	background: repeating-linear-gradient(
-		to right,
-		#000,
-		#000 1px,
-		transparent 2px,
-		transparent 6px
-	);
-	background-size: 12px 12px;
+
+.article_title {
+	position: relative;
+	padding: 0.25em 1em;
+	margin: 0 25%;
+	object-fit: contain;
+}
+.article_title:before,
+.article_title:after {
+	content: "";
+	width: 20px;
+	height: 30px;
+	position: absolute;
+	display: inline-block;
+}
+.article_title:before {
+	border-left: solid 7px #0a9bd7;
+	border-top: solid 7px #0a9bd7;
+	top: 0;
+	left: 0;
+}
+.article_title:after {
+	border-right: solid 7px #0a9bd7;
+	border-bottom: solid 7px #0a9bd7;
+	bottom: 0;
+	right: 0;
+}
+.article_title h1 {
+	font-family: "ヒラギノ角ゴ StdN", "Hiragino Kaku Gothic StdN", sans-serif;
+	font-size: 100px;
+	margin: 0;
+	padding: 0;
+}
+.comment-box {
+	margin-top: 60px;
 }
