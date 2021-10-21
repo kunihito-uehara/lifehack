@@ -11,7 +11,7 @@ class User < ApplicationRecord
     has_many :comments, dependent: :destroy 
 
     validates :name, presence: true, length: { maximum: 20 }
-    validates :email, presence: true, length: { maximum: 50 }
+    validates :email, presence: true, length: { maximum: 100 }
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|

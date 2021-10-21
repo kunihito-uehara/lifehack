@@ -66,8 +66,26 @@ img.icon-image {
 	font-family: "ヒラギノ角ゴ StdN", "Hiragino Kaku Gothic StdN", sans-serif;
 	font-size: 100px;
 }
+.article-title-from {
+	display: inline-block;
+	width: 100%;
+	padding: 1em;
+	line-height: 3;
+	box-sizing: border-box;
+	margin: auto;
+}
 .comment-create {
 	width: 100%;
+}
+.comment-form {
+	font-size: 30px;
+	display: inline-block;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	margin: 0.5em 0;
+	line-height: 2;
+	height: 5em;
 }
 
 .user_wrapper {
@@ -99,4 +117,25 @@ img.icon-image {
 	background: #fff;
 	border: solid 3px #555;
 	box-sizing: border-box;
+}
+/*陰影をストライプにしたボタンとの差分*/
+a.btn-border {
+	border: 2px solid #000;
+	border-top: 1px solid #000;
+	border-radius: 0 0 0.5rem 0.5rem;
+	background: -webkit-repeating-linear-gradient(
+		left,
+		#000,
+		#000 1px,
+		transparent 2px,
+		transparent 6px
+	);
+	background: repeating-linear-gradient(
+		to right,
+		#000,
+		#000 1px,
+		transparent 2px,
+		transparent 6px
+	);
+	background-size: 12px 12px;
 }
