@@ -11,12 +11,13 @@ class User < ApplicationRecord
     has_many :comments, dependent: :destroy 
 
     validates :name, presence: true, length: { maximum: 20 }
-    validates :email, presence: true, length: { maximum: 50 }
+    validates :email, presence: true, length: { maximum: 100 }
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲスト"
+      user.like_hack = "パワーナップ"
       # ↑name （カラム）を入力必須としているならば， user.name = "ゲスト" 必要
     end
   end
@@ -24,6 +25,7 @@ class User < ApplicationRecord
     find_or_create_by!(email: 'admin@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲスト（管理者）"
+      user.like_hack = "パワーナップ"
       user.admin = true
     end
   end

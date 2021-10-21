@@ -12,33 +12,47 @@
   <body>
 
   <header class="header">
-      <%= link_to root_path ,class:"top_menu_left_logo" do %>
+    <% if action_name != "top" %>
+      <%= link_to root_path ,class:"top_menu_logo" do %>
         <%= image_tag "lifehack_logo.png" , class:"logo"%>
       <% end %>
+    <% end %>
 
-  <% if user_signed_in? %>
-    <%= link_to "プロフィール", user_path(current_user.id) %>
-    <%= link_to "プロフィール編集", edit_user_registration_path %>
-    <%= link_to '記事一覧', articles_path %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "新規登録", new_user_registration_path %>
-    <%= link_to "ログイン", new_user_session_path %>
-    <%#= link_to 'ゲストログイン' , users_guest_sign_in_path, method: :post %>
-
-  <% end %>
+    <ul class="top_menu_right">
+    <% if user_signed_in? %>
+      <%= link_to "プロフィール", user_path(current_user.id) %>
+      <%#= link_to "プロフィール編集", edit_user_registration_path %>
+      <%= link_to '記事一覧', articles_path %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "新規登録", new_user_registration_path %>
+      <%= link_to "ログイン", new_user_session_path %>
+      <%#= link_to 'ゲストログイン' , users_guest_sign_in_path, method: :post %>
+    <% end %>
+    </ul>
+  </header>
 
   <%# <% if current_user.admin?%>
-  <% if notice %>
-    <p id="notice", class="alert alert-notice"><%= notice %></p>
-  <% end %>
-    <% if alert %>
-    <p class="alert alert-error"><%= alert %></p>
+<%= yield %>
+
+<% if flash.any? %>
+      <script type="text/javascript">
+        <% flash.each do |key, value| %>
+          <% key = "success" if key == "notice" %>
+          <% key = "error" if key == "alert" %>
+          toastr['<%= key %>']('<%= value %>');
+        <% end %>
+      </script>
     <% end %>
-  
-    <%= yield %>
+  <script type="text/javascript">
+  // toastr.success("")
+  // toastr.error("")
+  // toastr.warning("hello")
+  // toastr.info("hello")
+</script>    
+
     <footer class="footer">
-    <p></p>
+    <p>Created by kuni </p>
     </footer>
   </body>
 </html>

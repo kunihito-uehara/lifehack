@@ -10,13 +10,13 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="article-title-from">
     <%= form.label :タイトル %>
     <%= form.text_field :title %>
   </div>
 
 
   <div class="actions">
-    <%= form.submit'記事投稿' %>
+    <%= form.button '記事投稿' , type: 'button', onclick: 'submit();' %>
   </div>
 <% end %>

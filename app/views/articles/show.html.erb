@@ -1,19 +1,16 @@
-<div class="article_title">
-<p><%= "#{@article.title}"%></p>
+<div class="article_title"> 
+<h1><%= "#{@article.title}"%></h1>
 </div>
-
-<div class="row">
+<% if user_signed_in? %>
+        <div class="comment-create mb-4">
+            <%= render partial: 'comments/form', locals: { comment: @comment, article: @article } %>
+        </div>
+    <% end %>
     <ul>
         <li id="comments_area">
             <%= render partial: 'comments/index', locals: { comments: @comments } %>
         </li>
     </ul>
-
-    <% if user_signed_in? %>
-        <div class="comment-create">
-            <%= render partial: 'comments/form', locals: { comment: @comment, article: @article } %>
-        </div>
-    <% end %>
     
     <div class="favorite_button_on">
     <% if current_user && @article.user_id != current_user.id %>

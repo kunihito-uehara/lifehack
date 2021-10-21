@@ -1,25 +1,40 @@
 <% if notice %>
   <p id="notice", class="alert alert-notice"><%= notice %></p>
 <% end %>
+<div class="row">
+  <% comments.each do |comment| %>
+    <div class="comment-box col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <td class="align-middle">
+      <% unless comment.id.nil? %>
+        <% if comment.user.icon.present? %>
+          <p><%#= image_tag comment.user.icon.url %></p>
+        <% end %>
+        </td>
+        <div class="user_wrapper">
+          <div class="user_icon">
+            <%= image_tag comment.user.icon.url , class: "icon-image"%>
+          </div>
+          <div class="user_info">
+            <strong>
+              <%= link_to "#{comment.user.name}", user_path(comment.user.id) %>
+            </strong><br>
+            <div class="user_likehack">
+              <%= comment.user.like_hack %> 
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <div class="balloon2-top">
+          <p><%= simple_format(comment.content) %></p>
+        </div>
 
-<% comments.each do |comment| %>
-    <td class="align-middle">
-  <% unless comment.id.nil? %>
-    <% if comment.user.icon.present? %>
-    <p><%#= image_tag comment.user.icon.url %></p>
+        <% if comment.user == current_user %>
+          <%= link_to '削除', article_comment_path(comment.article_id, comment.id), class: "btn btn-outline-danger", method: :delete, remote: true %>
+        <% end %>
+        <% if current_user && current_user.admin? %>
+          <%= link_to '管理者削除', article_comment_path(comment.article_id, comment.id), class: "btn btn-outline-danger", method: :delete, remote: true %>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
-  </td>
-    <div class=""><%= image_tag comment.user.icon.url %></div>
-    <p><%= comment.user.like_hack %></p>   
-    <strong><%= link_to "#{comment.user.name}", user_path(comment.user.id) %></strong>
-    <p>吹き出しコメント：<%= comment.content %></p>
-
-    <% if comment.user == current_user %>
-        <p><%= link_to '削除', article_comment_path(comment.article_id, comment.id), method: :delete, remote: true %></p>
-    <% end %>
-
-    <% if current_user && current_user.admin? %>
-        <p><%= link_to '管理者削除', article_comment_path(comment.article_id, comment.id), method: :delete, remote: true %></p>
-          <% end %>
-  <% end %>
-<% end %>
+</div>
