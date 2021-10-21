@@ -132,26 +132,26 @@ img.icon-image {
 .article_title {
 	position: relative;
 	padding: 0.25em 1em;
-	margin: 0 25%;
+	margin: 0 20%;
 	object-fit: contain;
 }
 .article_title:before,
 .article_title:after {
 	content: "";
-	width: 20px;
-	height: 30px;
+	width: 40px;
+	height: 40px;
 	position: absolute;
 	display: inline-block;
 }
 .article_title:before {
-	border-left: solid 7px #0a9bd7;
-	border-top: solid 7px #0a9bd7;
+	border-left: solid 10px #0a9bd7;
+	border-top: solid 10px #0a9bd7;
 	top: 0;
 	left: 0;
 }
 .article_title:after {
-	border-right: solid 7px #0a9bd7;
-	border-bottom: solid 7px #0a9bd7;
+	border-right: solid 10px #0a9bd7;
+	border-bottom: solid 10px #0a9bd7;
 	bottom: 0;
 	right: 0;
 }
