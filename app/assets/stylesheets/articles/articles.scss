@@ -12,19 +12,10 @@ body {
 	min-height: 100%;
 	position: relative;
 }
-//記事一覧css 付箋ふう
-// .card-title {
-// 	display: flex;
-// 	height: auto;
-// 	padding: 0.4em 0.5em; /*文字の上下 左右の余白*/
-// 	color: #494949; /*文字色*/
-// 	background: #f4f4f4; /*背景色*/
-// 	border-left: solid 5px #7db4e6; /*左線*/
-// 	border-bottom: solid 3px #d7d7d7; /*下線*/
-// }
 
 //記事一覧（かぎかっこ）
 .box19 {
+	font-size: 20px;
 	position: relative;
 	padding: 0.25em 1em;
 }
@@ -47,11 +38,6 @@ body {
 	border-bottom: solid 1px #5767bf;
 	bottom: 0;
 	right: 0;
-}
-.box19 p {
-	font-size: 50px;
-	margin: 0;
-	padding: 0;
 }
 //記事詳細画面のタイトル文字
 .box19 h1 {
