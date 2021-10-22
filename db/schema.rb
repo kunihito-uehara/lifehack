@@ -17,8 +17,6 @@ ActiveRecord::Schema.define(version: 2021_10_18_122632) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title", null: false
-    t.text "content"
-    t.string "image"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,7 +24,6 @@ ActiveRecord::Schema.define(version: 2021_10_18_122632) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "title"
     t.text "content"
     t.bigint "article_id"
     t.bigint "user_id"

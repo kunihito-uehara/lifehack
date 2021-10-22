@@ -3,15 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
-    mount_uploader :icon, ImageUploader
+  mount_uploader :icon, ImageUploader
 
-    has_many :articles, dependent: :destroy
-    has_many :favorites, dependent: :destroy
-    has_many :favorite_articles, through: :favorites, source: :article
-    has_many :comments, dependent: :destroy 
+  has_many :articles, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_articles, through: :favorites, source: :article
+  has_many :comments, dependent: :destroy 
 
-    validates :name, presence: true, length: { maximum: 20 }
-    validates :email, presence: true, length: { maximum: 100 }
+  validates :name, presence: true, length: { maximum: 20 }
+  validates :email, presence: true, length: { maximum: 100 }
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
@@ -21,6 +21,7 @@ class User < ApplicationRecord
       # ↑name （カラム）を入力必須としているならば， user.name = "ゲスト" 必要
     end
   end
+  
   def self.admin_guest
     find_or_create_by!(email: 'admin@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
