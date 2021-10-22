@@ -27,9 +27,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    if  params[:user][:email].blank? &&  params[:user][:password].blank?
+      flash.now[:alert] = "Email と パスワードを入力して下さい"
+    else
+      if  params[:user][:email].blank?
+        flash.now[:alert] = "Email を入力して下さい"
+      end
+      if  params[:user][:password].blank?
+        flash.now[:alert] = "パスワードを入力して下さい"
+      end
+    end
+    super
+  end
 
   # GET /resource/edit
   # def edit
