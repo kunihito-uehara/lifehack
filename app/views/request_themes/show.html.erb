@@ -1,4 +1,4 @@
-<p> リクエストありがとう！</p>
+<h1> リクエストありがとうございます！</h1>
 
 <p>
   <strong>ニックネーム:</strong>
@@ -10,5 +10,5 @@
   <%= @request_theme.title %>
 </p>
 
-<%= link_to 'Edit', edit_request_theme_path(@request_theme) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to 'リクエスト編集', edit_request_theme_path(@request_theme), class: "btn btn-outline-info" %> |
+<%= link_to '記事一覧へ戻る', articles_path, class:"btn btn-outline-primary" %>

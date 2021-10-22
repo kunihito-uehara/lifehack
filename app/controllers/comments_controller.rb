@@ -66,16 +66,16 @@ class CommentsController < ApplicationController
   end
 
   private
-    def set_article
-      @article = Article.find(params[:article_id])
-    end
+  def set_article
+    @article = Article.find(params[:article_id])
+  end
 
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
 
-    def comment_params
-      params.require(:comment).permit(:content, :_articleid, :user_id)
-      # params.require(:comment).permit(:content)
-    end
+  def comment_params
+    params.require(:comment).permit(:content, :article_id, :user_id)
+    # params.require(:comment).permit(:content)
+  end
 end

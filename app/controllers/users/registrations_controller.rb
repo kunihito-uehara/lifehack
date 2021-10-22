@@ -26,7 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # POST /resource
+  # POST /resource 名前も追加したい
   def create
     if  params[:user][:email].blank? &&  params[:user][:password].blank?
       flash.now[:alert] = "Email と パスワードを入力して下さい"

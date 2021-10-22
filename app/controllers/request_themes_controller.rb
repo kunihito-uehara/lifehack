@@ -19,7 +19,7 @@ class RequestThemesController < ApplicationController
     @request_theme = RequestTheme.new(request_theme_params)
 
     if @request_theme.save
-      redirect_to @request_theme
+      redirect_to @request_theme,notice: 'リクエストありがとう！'
     else
       render :new
     end

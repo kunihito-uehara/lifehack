@@ -15,7 +15,8 @@ class UsersController < ApplicationController
     @user = current_user
     @articles = @user.articles
     favorites = Favorite.where(user_id: current_user.id).pluck(:article_id)  # ログイン中のユーザーのお気に入りのarticle_idカラムを取得
-    @favorite_list = Article.find(favorites)     # articlesテーブルから、お気に入り登録済みのレコードを取得
+    @favorite_list = Article.find(favorites)     
+    # articlesテーブルから、お気に入り登録済みのレコードを取得
   end
 
   private

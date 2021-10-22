@@ -14,5 +14,6 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery/dist/jquery.js
+//= require particles.js/particles.js
 //= require toastr
 //= require_tree .
