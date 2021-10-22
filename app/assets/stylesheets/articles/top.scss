@@ -24,7 +24,17 @@
 	width: 1000px;
 }
 .top_menu_right {
+	display: flex;
 	float: right;
+}
+.profile {
+	margin-right: 25px;
+}
+.article {
+	margin-right: 25px;
+}
+.logout {
+	margin-right: 25px;
 }
 // .top_menu_right li {
 // 	float: left;
