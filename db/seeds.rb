@@ -1,52 +1,53 @@
 #admin
 User.create!(
-  name: "uekuni", 
-  email: "uekuni@dic.com", 
-  like_hack:"パワーナップ",
-  password:"123456", 
+  name: "uekuni",
+  email: "uekuni@dic.com",
+  like_hack: "パワーナップ",
+  password: "123456",
   password_confirmation: "123456",
-  admin: true)
+  admin: true
+)
 
   #users
-  user = User.create!(
+  user1 = User.create!(
     name: "Mario", 
     email: "mario@dic.com", 
     like_hack:"ブラインドタッチ",
     password: "111111", 
     password_confirmation: "111111",
-    admin: true)
+    admin: false)
 
-  user = User.create!(
+  user2 = User.create!(
     name: "Luigi", 
     email: "luigi@dic.com", 
     like_hack:"朝散歩",
     password: "111111", 
     password_confirmation: "111111",
-    admin: true)
+    admin: false)
 
-  user = User.create!(
+  user3 = User.create!(
     name: "Wario", 
     email: "wario@dic.com", 
     like_hack:"日記を書く",
     password: "111111", 
     password_confirmation: "111111",
-    admin: true)
+    admin: false)
 
-  user = User.create!(
+  user4 = User.create!(
     name: "Koopa", 
     email: "koopa@dic.com", 
     like_hack:"瞑想",
     password: "111111", 
     password_confirmation: "111111",
-    admin: true)
+    admin: false)
 
-  user = User.create!(
+  user5 = User.create!(
     name: "Peach", 
     email: "peach@dic.com", 
     like_hack:"涙を流す",
     password: "111111", 
     password_confirmation: "111111",
-    admin: true)
+    admin: false)
 
     Article.create!(title: "test1", content: "content1", user_id: 1)
     Article.create!(title: "test2", content: "content2", user_id: 2)
