@@ -2,8 +2,8 @@
 User.create!(
   name: "uekuni", 
   email: "uekuni@dic.com", 
-  like_hack:"パワーナップ"
-  password: "123456", 
+  like_hack:"パワーナップ",
+  password:"123456", 
   password_confirmation: "123456",
   admin: true)
 
@@ -11,7 +11,7 @@ User.create!(
   user = User.create!(
     name: "Mario", 
     email: "mario@dic.com", 
-    like_hack:"ブラインドタッチ"
+    like_hack:"ブラインドタッチ",
     password: "111111", 
     password_confirmation: "111111",
     admin: true)
@@ -19,7 +19,7 @@ User.create!(
   user = User.create!(
     name: "Luigi", 
     email: "luigi@dic.com", 
-    like_hack:"傾聴力"
+    like_hack:"朝散歩",
     password: "111111", 
     password_confirmation: "111111",
     admin: true)
@@ -27,7 +27,7 @@ User.create!(
   user = User.create!(
     name: "Wario", 
     email: "wario@dic.com", 
-    like_hack:"日記を書く"
+    like_hack:"日記を書く",
     password: "111111", 
     password_confirmation: "111111",
     admin: true)
@@ -35,7 +35,7 @@ User.create!(
   user = User.create!(
     name: "Koopa", 
     email: "koopa@dic.com", 
-    like_hack:"瞑想"
+    like_hack:"瞑想",
     password: "111111", 
     password_confirmation: "111111",
     admin: true)
@@ -43,7 +43,7 @@ User.create!(
   user = User.create!(
     name: "Peach", 
     email: "peach@dic.com", 
-    like_hack:"涙を流す"
+    like_hack:"涙を流す",
     password: "111111", 
     password_confirmation: "111111",
     admin: true)
@@ -72,5 +72,3 @@ User.create!(
     Request_themes.create!(name: "name3",title: "test3", user_id: 3)
     Request_themes.create!(name: "name4",title: "test4", user_id: 4)
     Request_themes.create!(name: "name5",title: "test5", user_id: 5)
-
-  end
