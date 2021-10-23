@@ -16,8 +16,10 @@
     <% if current_user && @article.user_id != current_user.id %>
       <% if @favorite.present? %>
         <%= link_to 'いいね解除', article_favorite_path(article_id: @article.id), method: :delete, remote: true, class: 'btn btn-danger' %>
+        <%# <i class="far fa-heart"><i> %>
       <% else %>
         <%= link_to '記事いいね', article_favorites_path(article_id: @article.id), method: :post, remote: true, class: 'btn btn-primary' %>
+        <%# <i class= "far fa-heart"></i> %>
       <% end %>
         ♥<%= @article.favorites.count %>
     <% end %>

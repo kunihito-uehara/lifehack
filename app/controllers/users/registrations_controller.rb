@@ -28,11 +28,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource 名前も追加したい
   def create
-    if  params[:user][:email].blank? &&  params[:user][:password].blank?
-      flash.now[:alert] = "Email と パスワードを入力して下さい"
+    if  params[:user][:name].blank? &&  params[:user][:password].blank?
+      flash.now[:alert] = "名前 と パスワードを入力して下さい"
     else
-      if  params[:user][:email].blank?
-        flash.now[:alert] = "Email を入力して下さい"
+      if  params[:user][:name].blank?
+        flash.now[:alert] = "名前 を入力して下さい"
       end
       if  params[:user][:password].blank?
         flash.now[:alert] = "パスワードを入力して下さい"

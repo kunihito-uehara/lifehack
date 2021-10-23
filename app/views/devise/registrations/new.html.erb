@@ -2,15 +2,14 @@
   <div class="box-inner">
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
     <%#= render "devise/shared/error_messages", resource: resource %>
-    <h1>新規登録</h1>
+    <h1>新規登録</h1><br />
     <div class="box-name">
       <%= f.label :name, "名前" %><br />
       <%= f.text_field :name, autofocus: true %>
     </div>
-
     <div class="box-email">
-      <%= f.label :email, "Eメール" %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%#= f.label :email, "Eメール" %>
+      <%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
     <div class="box-password">
@@ -24,7 +23,7 @@
     <div class="box-password">
       <%= f.label :password_confirmation, "パスワード(確認)" %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+    </div><br />
 
     <div class="box-login">
       <%= f.submit "新規登録" %>
