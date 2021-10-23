@@ -21,7 +21,9 @@
     <%= form.text_area :title %>
   </div>
 
+<% unless current_user.admin? %>
   <div class="actions">
     <%= form.submit'リクエストする',class: 'btn btn-primary' %>
   </div>
+  <%end%>
 <% end %>

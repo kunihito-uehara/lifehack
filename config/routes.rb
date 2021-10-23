@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "articles#top"
   resources :request_themes
-  # resources :users, only: [:show]
+  resources :users, only: [:show]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :articles do
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     # sessions: 'users/sessions'}
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  get "user" => "users#show"
+  # get "user" => "users#show"
   get "article" => "articles#top"
 
   # devise_scope :user do
