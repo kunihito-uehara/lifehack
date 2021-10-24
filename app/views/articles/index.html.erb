@@ -20,7 +20,7 @@
         <div class="box19"><%= link_to "#{article.title}", article,data: {"turbolinks" => false} %></div>
         <% if current_user && current_user.admin? %> 
           <%= link_to '編集', edit_article_path(article), class: "btn btn-outline-info" %>
-          <%= link_to '削除', article, class: "btn btn-outline-danger", method: :delete, data: { confirm: '削除?' } %>
+          <i class="fas fa-trash-alt"></i><%= link_to '削除', article, class: "btn btn-outline-danger", method: :delete, data: { confirm: '削除?' } %>
         <% end %>
         <br /><br />
       </div>

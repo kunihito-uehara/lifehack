@@ -16,6 +16,18 @@ class FavoritesController < ApplicationController
   end
 end
 
+# def create
+#   favorite = current_user.favorites.create(article_id: params[:article_id])
+#   redirect_to articles_path, notice: "#{favorite.article.user.name}さんのブログをお気に入り登録しました"
+# end
+
+# def destroy
+#   favorite = current_user.favorites.find_by(article_id: params[:article_id]).destroy
+#   redirect_to articles_path, notice: "#{favorite.article.user.name}さんのブログをお気に入り解除しました"
+# end
+
+
+
 
 # def create
 #   if @article.user_id != current_user.id   # 投稿者本人以外に限定

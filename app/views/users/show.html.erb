@@ -7,7 +7,10 @@
     <p>名前 : <%= @user.name %></p>
     <p>メールアドレス : <%= @user.email %></p>
     <p>好きなライフハック : <%= @user.like_hack %></p>
-
+    <h3>いいね記事</h3>
+    <%# @user.favorite_articles.each do |article| %>
+      <%#= link_to "#{article.title}" %>
+    <%#end%>
       <ul>
         <li>
           <% if current_user == @user %>
