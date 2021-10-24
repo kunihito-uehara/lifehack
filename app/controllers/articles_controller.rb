@@ -9,10 +9,9 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    if @article.user != current_user
-      redirect_to articles_path, alert: "不正なアクセスです。"
-    end
-
+    # if @article.user != current_user
+    #   redirect_to articles_path, alert: "不正なアクセスです。"
+    # end
   end
   
   def create

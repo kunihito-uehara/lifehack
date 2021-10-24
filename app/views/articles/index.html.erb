@@ -16,11 +16,15 @@
 <br />
   <div class="row">
     <% @articles.each do |article| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">
-        <div class="box19"><%= link_to "#{article.title}", article,data: {"turbolinks" => false} %></div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 ">      
+        <div class="box19"><%= link_to "#{article.title}", article %></div>
         <% if current_user && current_user.admin? %> 
-          <%= link_to '編集', edit_article_path(article), class: "btn btn-outline-info" %>
-          <i class="fas fa-trash-alt"></i><%= link_to '削除', article, class: "btn btn-outline-danger", method: :delete, data: { confirm: '削除?' } %>
+          <%= link_to  edit_article_path(article) do %>
+          <i class="fas fa-edit fa-1x"></i>
+          <% end %>
+          <%= link_to article, method: :delete, data: { confirm: '削除?' } do %>
+          <i class="fas fa-trash-alt"></i>
+          <% end %>
         <% end %>
         <br /><br />
       </div>
