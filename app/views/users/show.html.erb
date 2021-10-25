@@ -1,28 +1,23 @@
-<div class="profile">
-  <h1><span>プロフィール</span></h1>
-
-  <div class="profile-icon">
-    <p>プロフィール画像 : <%= image_tag @user.icon.url,size: '200x200' if @user.icon && @user.icon.url %></p>
+<div class="profile row">
+<h1 class="app-function-title col-12"><span>User</span>マイページ</h1>
+  <div class="profile-icon col-12 col-lg-6">
+    <p>プロフィール画像 : <%= image_tag @user.icon.url,size: '300x300' if @user.icon && @user.icon.url %></p>
   </div>
-    <p>名前 : <%= @user.name %></p>
-    <p>メールアドレス : <%= @user.email %></p>
-    <p>好きなライフハック : <%= @user.like_hack %></p>
 
-    <h3>いいね記事</h3>
+  <div class="profile-box col-12 col-lg-6">
+  <h2 class="profile-name">名前：<%= @user.name %></h2>
+  <h2 class="profile-email">Eメール：<%= @user.email %></h2>
+  <h2 class="profile-like_hack">好きなライフハック：<%= @user.like_hack %></h2>
+  <h2 class="profile-like">いいね👍記事</h2>
     <% @user.favorite_articles.each do |article| %>
-      <%= link_to "#{article.title}",article_path(article) %>
+        <ul class="favorite_articless_list">
+        <ul><%= link_to "#{article.title}",article_path(article) %></ul>
     <%end %>
-      <ul>
-        <li>
-          <% if current_user == @user %>
-            <%= link_to 'プロフィール編集', edit_user_registration_path, class: 'btn user-show-btn' %>
-          <% end %>
-        </li>
-        <li>
-          <% if current_user.admin? %>
-            <%= link_to '管理者画面', rails_admin_path, class: 'btn user-show-btn' %>
-          <% end %>
-        </li>
-      </ul>
   </div>
 </div>
+<% if current_user == @user %>
+  <%= link_to 'プロフィール編集', edit_user_registration_path, class: 'btn btn-outline-primary' %>
+<% end %><br><br>
+<% if current_user.admin? %>
+  <%= link_to '管理者画面', rails_admin_path, class: 'btn btn-primary' %>
+<% end %>

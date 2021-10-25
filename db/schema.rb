@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2021_10_18_122632) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name", null: false
+    t.string "name"
     t.text "like_hack"
     t.string "icon"
     t.boolean "admin", default: false
