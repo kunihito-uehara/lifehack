@@ -31,7 +31,9 @@
           <%= link_to article_comment_path(comment.article_id, comment.id),  method: :delete, remote: true do%>
           <i class="fas fa-trash-alt fa-2x"></i>
           <% end %>
-            <%= link_to '編集',edit_article_comment_path(comment.article_id, comment.id), remote: true %>
+            <%= link_to edit_article_comment_path(comment.article_id, comment.id), remote: true do%>
+            <i class="fas fa-edit fa-2x"></i>
+            <% end %>
             <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>
         <% end %>
         <% if current_user && current_user.admin? %>
