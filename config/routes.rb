@@ -21,8 +21,8 @@ Rails.application.routes.draw do
     # sessions: 'users/sessions'}
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  get "user" => "users#show"
-  get "article" => "articles#top"
+  # get "user" => "users#show"
+  # get "article" => "articles#top"
 
   # devise_scope :user do
   #   root to: "devise/sessions#new"

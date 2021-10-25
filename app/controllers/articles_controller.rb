@@ -9,9 +9,9 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    # if @article.user != current_user
-    #   redirect_to articles_path, alert: "不正なアクセスです。"
-    # end
+    unless current_user.admin?
+      redirect_to articles_path, alert: "不正なアクセスです。"
+    end
   end
   
   def create
@@ -25,11 +25,11 @@ class ArticlesController < ApplicationController
   
   def edit
     @article = Article.find(params[:id])
-    if @article.user != current_user
+    # if @article.user == current_user
       unless current_user.admin?
       redirect_to articles_path, alert: "不正なアクセスです。"
       end
-    end
+    # end
   end
   
   def update
