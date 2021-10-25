@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_article, only: [:edit, :update]
   def index
     @comments = Comment.all
   end
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     # @comment = @article.comments.find(params[:id])
     respond_to do |format|
-      flash.now[:notice] = 'コメント編集'
+      flash.now[:notice] = 'コメント編集中'
       format.js { render :edit }
     end
   end
@@ -55,12 +55,11 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
+    @comment.destroy
     respond_to do |format|
-      if @comment.destroy
-        flash.now[:notice] = '削除！'
+        flash.now[:notice] = '削除'
         format.js { render :index }
       end
-    end
   end
 
   private

@@ -10,7 +10,7 @@
 
     <h3>いいね記事</h3>
     <% @user.favorite_articles.each do |article| %>
-      <%= link_to "#{article.title}" %>
+      <%= link_to "#{article.title}",article_path(article) %>
     <%end %>
       <ul>
         <li>
