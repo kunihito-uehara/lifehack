@@ -1,14 +1,17 @@
 class ArticlesController < ApplicationController
   # before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ new]
 
   def index
     @q = Article.ransack(params[:q])
-    @articles = @q.result(distinct: true).order(id: "DESC").page(params[:page]).per(30) 
-
+    @articles = @q.result(distinct: true).order(id: "DESC").page(params[:page]).per(20) 
   end
 
   def new
     @article = Article.new
+    # if @article.user != current_user
+    #   redirect_to articles_path, alert: "不正なアクセスです。"
+    # end
   end
   
   def create
@@ -22,8 +25,11 @@ class ArticlesController < ApplicationController
   
   def edit
     @article = Article.find(params[:id])
-    # if @article.user != current_user
-    #   redirect_to recipes_path, alert: "不正なアクセスです。"
+    if @article.user != current_user
+      unless current_user.admin?
+      redirect_to articles_path, alert: "不正なアクセスです。"
+      end
+    end
   end
   
   def update

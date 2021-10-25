@@ -1,7 +1,7 @@
 <%= form_with(model: request_theme, local: true) do |form| %>
   <% if request_theme.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(request_theme.errors.count, "error") %> prohibited this request_theme from being saved:</h2>
+      <h2><%= pluralize(request_theme.errors.count, "件") %> のエラーです</h2>
 
       <ul>
       <% request_theme.errors.full_messages.each do |message| %>
@@ -12,16 +12,18 @@
   <% end %>
 <h1>リクエストするテーマを投稿してね！</h1>
 
-  <div class="field">
-    <%= form.label :ニックネーム%>
-    <%= form.text_field :name %>
-  </div>
-  <div class="field">
+  <div class="name-field">
+    <%= form.label :名前%>
+    <%= form.text_area :name %>
+  </div><br>
+  <div class="title-field">
     <%= form.label :リクエストテーマ %>
     <%= form.text_area :title %>
   </div>
 
+<% unless current_user.admin? %>
   <div class="actions">
     <%= form.submit'リクエストする',class: 'btn btn-primary' %>
   </div>
+  <%end%>
 <% end %>

@@ -58,13 +58,20 @@ users = { "user1": user1, "user2": user2, "user3": user3, "user4": user4, "user5
 
 60.times {|n|
   article = Article.create(title: "article_title_#{n}", user_id: user6.id)
-  10.times { |num|
-    Comment.create(content: "comment_content#{n}", article_id: article.id, user_id: users[:"user#{rand(1..6)}"].id)
-    Comment.create(content: "comment_content#{num}", article_id: article.id, user_id: users[:"user#{rand(1..6)}"].id)
-  }
+  # 10.times { |num|
+  #   Comment.create(content: "comment_content#{n}", article_id: article.id, user_id: users[:"user#{rand(1..6)}"].id)
+  #   Comment.create(content: "comment_content#{num}", article_id: article.id, user_id: users[:"user#{rand(1..6)}"].id)
+  # }
   Favorite.create(user_id: rand(1..5), article_id: article.id)
   RequestTheme.create(name: "name_#{n}", title: "title_#{n}", user_id: rand(1..5))
 }
+
+# article = Article.create(title: "仕事の効率アップしたワークハック教えて", user_id: user6.id)
+# article = Article.create(title: "集中力が上がる方法を教えて", user_id: user6.id)
+# article = Article.create(title: "睡眠の質をあげるライフハック教えて", user_id: user6.id)
+# article = Article.create(title: "モチベーションをあげる方法を教えて", user_id: user6.id)
+# article = Article.create(title: "DICで学ぶ上で大事なことを教えて", user_id: user6.id)
+
 
 # Article.create!(title: "記事1", content: "content1", user_id: 1, article_id: 1)
 # Comment.create!(article_id: 1, user_id: 1, content: "コメント1")

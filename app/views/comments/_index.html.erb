@@ -29,7 +29,10 @@
         </div>
 
         <% if comment.user == current_user %>
-          <%= link_to '削除', article_comment_path(comment.article_id, comment.id), class: "btn btn-outline-danger", method: :delete, remote: true %>
+          <%= link_to article_comment_path(comment.article_id, comment.id),  method: :delete, remote: true do%>
+          <i class="fas fa-trash-alt fa-2x"></i>
+          <% end %>
+            <%= link_to '編集',edit_article_comment_path(comment.article_id, comment.id), remote: true %>
         <% end %>
         <% if current_user && current_user.admin? %>
           <%= link_to '管理者削除', article_comment_path(comment.article_id, comment.id), class: "btn btn-outline-danger", method: :delete, remote: true %>
