@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  validates :title, presence: true, length: { maximum: 100 }
+  validates :title, presence: true
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy

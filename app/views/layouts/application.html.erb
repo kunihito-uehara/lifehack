@@ -21,7 +21,7 @@
 
     <ul class="top_menu_right">
     <% if user_signed_in? %>
-      <%= link_to "プロフィール", user_path(current_user.id), class:"profile" %>
+      <%= link_to "プロフィール", current_user, class:"profile" %>
       <%#= link_to "プロフィール編集", edit_user_registration_path %>
       <%= link_to '記事一覧', articles_path, class:"article" %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout" %>
@@ -75,8 +75,6 @@
 </script> %>
 
 
-    <footer class="footer">
-    <p>Created by kuni </p>
-    </footer>
+    <footer class="footer">Created by kuni</footer>
   </body>
 </html>

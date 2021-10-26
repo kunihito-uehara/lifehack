@@ -5,7 +5,7 @@
         <div class="comment-create mb-4">
             <%= render partial: 'comments/form', locals: { comment: @comment, article: @article } %>
         </div>
-    <% end %>
+<% end %>
     <ul>
         <li id="comments_area">
             <%= render partial: 'comments/index', locals: { comments: @comments } %>

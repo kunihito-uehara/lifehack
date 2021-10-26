@@ -38,4 +38,10 @@ li {
 }
 .footer {
 	font-family: "ヒラギノ角ゴ StdN", "Hiragino Kaku Gothic StdN", sans-serif;
+	width: 100%;
+	margin: auto; /* 中央揃え */
+	bottom: 0; /*下に固定*/
+	// position: absolute; /*←絶対位置*/
+	// position: fixed;
+	// position: relative; /* ←@相対位置 */
 }
