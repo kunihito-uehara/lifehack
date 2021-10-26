@@ -89,7 +89,6 @@ RSpec.describe 'ユーザー管理機能', type: :system do
           visit articles_path
           click_link 'プロフィール'
           click_link '管理者画面'
-          all("Request theme")[0].click
           expect(page).to have_content 'サイト管理'
         end
       end
