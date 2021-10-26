@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     @q = Article.ransack(params[:q])
-    @articles = @q.result(distinct: true).order(id: "DESC").page(params[:page]).per(20) 
+    @articles = @q.result(distinct: true).order(id: "DESC").page(params[:page]).per(21) 
   end
 
   def new
