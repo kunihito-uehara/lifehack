@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 2021_10_18_122632) do
   end
 
   create_table "request_themes", force: :cascade do |t|
-    t.string "name"
-    t.text "title"
+    t.string "name" # => 件名
+    t.text "title" # => 本文
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
