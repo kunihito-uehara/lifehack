@@ -73,7 +73,6 @@ RSpec.describe '記事機能', type: :system do
       it '他人の投稿は削除できない（削除ボタンが見つからない）' do 
         login
         visit articles_path
-        binding.irb
         expect(page).not_to have_content all(".fa-trash-alt")
       end
     end
@@ -82,7 +81,7 @@ RSpec.describe '記事機能', type: :system do
   describe '記事削除機能' do
     context '記事を削除した場合' do      
       it '削除表示がされる' do
-        login
+        admin_login
         page.accept_confirm do
           all(".fa-trash-alt")[0].click
         end
@@ -95,13 +94,13 @@ RSpec.describe '記事機能', type: :system do
     context '検索をした場合' do
       it "検索キーワードを含む記事で絞り込まれる" do
         login
-        fill_in 'search_title', with: 'test'
+        fill_in 'q[title_cont]', with: 'test'
         click_button '検索'
         expect(page).to have_content 'test'
       end
       it "検索キーワードを含まない記事は表示されない" do
         login
-        fill_in 'search_title', with: 'test'
+        fill_in 'q[title_cont]', with: 'test'
         click_button '検索'
         expect(page).not_to have_content 'article_a'
       end

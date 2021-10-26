@@ -13,16 +13,11 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 20 }
   # validates :email, presence: true, length: { maximum: 100 }
 
-  # def already_liked?(article)
-  #   self.likes.exists?(article_id: article.id)
-  # end
-
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲスト"
       user.like_hack = "パワーナップ"
-      # ↑name （カラム）を入力必須としているならば， user.name = "ゲスト" 必要
     end
   end
   
