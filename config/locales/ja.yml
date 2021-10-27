@@ -1,6 +1,24 @@
----
 ja:
   activerecord:
+    models:
+      favorite: お気に入り
+      request_theme: リクエストテーマ
+      user: ユーザー
+      article: 記事
+      comment: コメント
+    attributes:
+      request_theme:
+        name: 件名
+        title: 内容
+      user:
+        email: Eメール
+        name: 名前
+        like_hack: 好きなライフハック
+        icon: アイコン画像
+      comment:
+        content: コメント
+      article:
+        title: タイトル
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"

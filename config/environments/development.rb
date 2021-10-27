@@ -11,8 +11,8 @@ Rails.application.configure do
 
   # Show full error reports.
 
-  # config.consider_all_requests_local = true
-  config.consider_all_requests_local = false 
+  config.consider_all_requests_local = true
+  # config.consider_all_requests_local = false 
   #↑↑開発者用のエラー画面でユーザ用のエラー画面を見せる設定にしたままだと、開発がしづらくなるので、確認が終了後は
   #config.consider_all_requests_local = falseをtrueに戻す。
 

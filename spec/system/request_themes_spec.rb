@@ -35,7 +35,7 @@ RSpec.describe 'リクエスト機能', type: :system do
         sleep 5.0
         click_link 'プロフィール'
         click_link '管理者画面'
-        link = all('a', text: 'Request theme')[0]
+        link = all('a', text: 'リクエストテーマ')[0]
         link.click
         expect(page).to have_content 'テスト件名'
       end

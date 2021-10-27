@@ -86,3 +86,4 @@ gem 'kaminari'
 gem 'font-awesome-sass'
 # gem 'bootstrap', '~> 4.6.0'
 gem "toastr-rails"
+gem 'rails-i18n'
