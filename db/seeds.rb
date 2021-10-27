@@ -58,10 +58,10 @@ users = { "user1": user1, "user2": user2, "user3": user3, "user4": user4, "user5
 
 60.times {|n|
   article = Article.create(title: "article_title_#{n}", user_id: user6.id)
-  # 10.times { |num|
-  #   Comment.create(content: "comment_content#{n}", article_id: article.id, user_id: users[:"user#{rand(1..6)}"].id)
-  #   Comment.create(content: "comment_content#{num}", article_id: article.id, user_id: users[:"user#{rand(1..6)}"].id)
-  # }
+  10.times { |num|
+    Comment.create(content: "comment_content#{n}", article_id: article.id, user_id: users[:"user#{rand(1..6)}"].id)
+    Comment.create(content: "comment_content#{num}", article_id: article.id, user_id: users[:"user#{rand(1..6)}"].id)
+  }
   Favorite.create(user_id: rand(1..5), article_id: article.id)
   RequestTheme.create(name: "name_#{n}", title: "title_#{n}", user_id: rand(1..5))
 }

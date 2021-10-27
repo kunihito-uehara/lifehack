@@ -10,11 +10,8 @@
     </div>
   <% end %>
 
-  <div class="article-title-from">
     <%= form.label :タイトル %>
-    <%= form.text_field :title %>
-  </div>
-
+    <%= form.text_field :title, class:"article-title-from" %>
 
   <div class="actions">
     <%= form.button '記事投稿' ,class: 'btn btn-primary' %>

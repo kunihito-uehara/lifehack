@@ -2,7 +2,6 @@
   <% if request_theme.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(request_theme.errors.count, "件") %> のエラーです</h2>
-
       <ul>
       <% request_theme.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,16 +9,10 @@
       </ul>
     </div>
   <% end %>
-<h1>リクエストするテーマを投稿してね！</h1>
+<h1>あなたが解決したい悩みをリクエストするテーマに投稿！</h1>
 
-  <div class="name-field">
-    <%= form.label :件名%>
-    <%= form.text_area :name %>
-  </div><br>
-  <div class="title-field">
-    <%= form.label :本文 %>
-    <%= form.text_area :title %>
-  </div>
+  <%= form.text_area :name, :placeholder => "件名（50文字以内）", class:"name-field" %><br>
+  <%= form.text_area :title, :placeholder => "勉強中すぐ集中が切れてしまう、最近眠りが浅い、すぐ痩せたい！・・・等（1000文字以内）", class: "title-field" %>
 
   <div class="actions">
     <%= form.submit'リクエストする',class: 'btn btn-primary' %>

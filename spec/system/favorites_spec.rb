@@ -35,4 +35,13 @@ RSpec.describe Favorite, type: :system do
       end
     end
   end
+  context '記事にいいねを外した場合' do
+    it '0が表示される' do
+      login
+      visit article_path(@article2.id)
+      click_on "いいね"
+      click_on "いいね解除"
+      expect(page).to have_content 0
+    end
+  end
 end

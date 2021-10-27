@@ -11,9 +11,7 @@
     </div>
   <% end %>
 
-  <div class="comment-form">
-    <%= form.text_area :content,placeholder:"コメント入力" %>
-  </div>
+    <%= form.text_area :content,placeholder:"コメント入力", class:"comment-form" %>
 
   <div class="actions">
     <%= form.submit'投稿', class:"btn btn-success" %>
