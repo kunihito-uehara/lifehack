@@ -18,10 +18,10 @@ body {
 //記事一覧（かぎかっこ）
 .box19 {
 	object-fit: contain;
-	font-size: 20px;
+	font-size: 30px;
 	position: relative;
-	padding: 0.25em 1em;
-	margin: 0 1.5em;
+	padding: 1em 1em;
+	margin: 0 3.5em;
 }
 .box19:before,
 .box19:after {
@@ -32,14 +32,14 @@ body {
 	display: inline-block;
 }
 .box19:before {
-	border-left: solid 1px #5767bf;
-	border-top: solid 1px #5767bf;
+	border-left: solid 7px #0a9bd7;
+	border-top: solid 7px #0a9bd7;
 	top: 0;
 	left: 0;
 }
 .box19:after {
-	border-right: solid 1px #5767bf;
-	border-bottom: solid 1px #5767bf;
+	border-right: solid 7px #0a9bd7;
+	border-bottom: solid 7px #0a9bd7;
 	bottom: 0;
 	right: 0;
 }
@@ -68,11 +68,13 @@ img.icon-image {
 
 .article-title-from {
 	display: inline-block;
-	width: 100%;
+	width: 400px;
+	height: 100px;
 	padding: 1em;
 	line-height: 3;
 	box-sizing: border-box;
 	margin: auto;
+	margin-bottom: 50px;
 }
 .comment-create {
 	width: 100%;
@@ -113,7 +115,7 @@ img.icon-image {
 	width: 800px;
 	max-width: 100%;
 	color: #555;
-	font-size: 18px;
+	font-size: 20px;
 	background: #fff;
 	border: solid 3px #555;
 	box-sizing: border-box;
@@ -153,4 +155,11 @@ img.icon-image {
 }
 .comment-box {
 	margin-top: 60px;
+}
+
+.actions {
+	margin-bottom: 10px;
+}
+.pagination {
+	margin-left: 50px;
 }
