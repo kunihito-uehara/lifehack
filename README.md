@@ -23,7 +23,6 @@ URL：https://young-peak-69014.herokuapp.com/
 
 ## 💻 開発環境
 
-- OS：
 - 言語： Ruby 2.6.5, HTML, CSS, JavaScript, SQL
 - フレームワーク： Ruby on Rails 5.2.5, Bootstrap
 - JS ライブラリ： jQuery
