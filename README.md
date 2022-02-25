@@ -12,8 +12,6 @@ URL：https://young-peak-69014.herokuapp.com/
 
 
 
-
-
 ## 😆 作成背景：
 
 ライフハックで生産性が上がるのが実感できるから、みんなに知って欲しい！
@@ -36,15 +34,6 @@ URL：https://young-peak-69014.herokuapp.com/
 
 - アドミン（サイト管理者）
   - 不正な利用者の削除・編集機能
-
-## 😃 就業 Term の技術
-
-- devise
-- お気に入り機能
-
-## 😃 カリキュラム外の技術
-
-- ransack
 
 ## 📝 使用 Gem 等一覧
 
